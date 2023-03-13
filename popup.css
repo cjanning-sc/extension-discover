@@ -95,6 +95,7 @@ body {
 .infoCellTwo {
     width: 50%;
     text-align: right;
+    color: -webkit-link;
 }
 
 #footer {
