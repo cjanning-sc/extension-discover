@@ -81,6 +81,8 @@ body {
 
 .infoTable {
     width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .infoCellOne {
@@ -97,6 +99,7 @@ body {
 
 #footer {
     text-align: right;
+    color: #05999a;
     font-size: 12px;
     margin-top: 20px;
 }
@@ -104,7 +107,7 @@ body {
 #loader {
     display: block;
     height: 100px;
-     margin-top: 20px;
+    margin-top: 20px;
 }
 
 #spinner {
@@ -146,7 +149,7 @@ body {
     display: none;
     align-items: center;
     justify-content: center;
-    height: 100px;
+    height: 105px;
     text-align: center;
     font-size: 16px;
     color: red;

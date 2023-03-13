@@ -91,7 +91,9 @@ async function getUserProfile(domain, uuid) {
                 ],
                 affinity: [],
                 max_size: 5,
-                product_spec_version: "v2"
+                product_spec_version: "v2",
+                keyword: ["sp", "sb"],
+                personalization: 2
             }
         })
     };
@@ -189,6 +191,51 @@ function buildTable(data) {
         } else {
             // document.getElementById("message").style = "display:block";
             // document.getElementById("message").innerHTML = "No affinities collected";
+        }
+
+        if (data.keyword.sp) {
+            if (data.keyword.sp.length && data.keyword.sp.length > 0) {
+                var keyword = data.keyword.sp;
+                var keywords = Object.entries(keyword);
+
+                var keywordsList = [];
+                for (var i = 0; i < keywords.length; i++) {
+                    var kwObject = keywords[i][1];
+                    var kwArray = Object.entries(kwObject);
+                    for (var j = 0; j < kwArray.length; j++) {
+                        if (kwArray[j][0] == 'kw') {
+                            keywordsList.push(kwArray[j][1]);
+                        }
+                    }
+
+                }
+                console.log(keywordsList);
+                const tbl = document.createElement("table");
+                tbl.setAttribute("class", "infoTable");
+                const tblBody = document.createElement("tbody");
+
+                const row = document.createElement("tr");
+                row.setAttribute("class", "infoRow");
+
+                const cell1 = document.createElement("td");
+                cell1.setAttribute("class", "infoCellOne");
+                const text1 = document.createTextNode("Search History:");
+                cell1.appendChild(text1);
+                row.appendChild(cell1);
+
+                const cell2 = document.createElement("td");
+                cell2.setAttribute("class", "infoCellTwo");
+                const text2 = document.createTextNode(keywordsList);
+                cell2.appendChild(text2);
+
+                row.appendChild(cell2);
+                tblBody.appendChild(row);
+
+                tbl.appendChild(tblBody);
+                const container = document.getElementById("keyword");
+                container.appendChild(tbl);
+
+            }
         }
 
         if (data.product.views) {
