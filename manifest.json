@@ -1,0 +1,28 @@
+{
+    "name": "Sitecore Affinity Scorecard",
+    "version": "1.0.2",
+    "description": "Real-time user profile affinities from Sitecore Discover.",
+    "permissions": [
+        "cookies",
+        "tabs"
+    ],
+    "host_permissions": [
+        "*://www.reeds.com/*",
+        "*://www.biglots.com/*",
+        "*://www.petco.com/*",
+        "*://www.sitecore.com/*",
+        "*://www.dsw.com/*"
+    ],
+    "icons": {
+        "16": "images/discover_logo.png",
+        "32": "images/discover_logo.png",
+        "48": "images/discover_logo.png",
+        "128": "images/discover_logo.png"
+    },
+    "manifest_version": 3,
+    "author": "Chris Janning",
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Sitecore Affinity Scorecard"
+    }
+}

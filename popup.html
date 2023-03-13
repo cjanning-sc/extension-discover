@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sitecore Affinity Scorecard</title>
+    <meta charset="utf-8">
+    <link href="popup.css" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="extension">
+        <div id="title"><img src="images/discover_logo.png"><span>Affinity Scorecard</span></div>
+        <div id="loader">
+            <div id="spinner"></div>
+            <div id="loading">Loading user profile...</div>
+        </div>
+        <div id="error"></div>
+        <div id="scorecard">
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td style="text-align:left">
+                            <div id="hostname"></div>
+                        </td>
+                        <td style="text-align:right;">
+                            <div id="uuid"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="affinities">
+                <div id="message"></div>
+                <!-- AffinityTable inserted here -->
+            </div>
+        </div>
+        <div id="product"></div>
+        <div id="category"></div>
+        <div id="footer">Powered by Sitecore Discover</div>
+        <div style="height:10px"></div>
+    </div>
+</body>
+
+</html>

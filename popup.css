@@ -1,0 +1,158 @@
+body {
+    background-color: #f6f6f6;
+}
+
+#extension {
+    font-family: Calibri, AvenirNextR, Arial, Sans-Serif;
+    font-style: normal;
+    color: #212529;
+    width: 350px;
+    height: 125px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#title span {
+    padding-left: 10px;
+}
+
+#title img {
+    width: 40px;
+}
+
+#scorecard {
+    display: none;
+    margin-bottom: 20px;
+}
+
+
+#affinityTable {
+    width: 100%;
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid darkgray;
+    border-collapse: collapse;
+}
+
+.nameRow {
+    line-height: 25px;
+    background-color: lightgray;
+    border: 1px solid darkgray;
+}
+
+.nameCell {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.valRow {
+    line-height: 20px;
+    border: 1px solid darkgray;
+}
+
+.valCell {
+    font-size: 14px;
+    padding-left: 25px;
+    text-align: left;
+    border-right: 1px solid darkgray;
+    width: 75%;
+}
+
+.high {
+    color: green;
+    font-weight: bold;
+}
+
+.scoreCell {
+    font-size: 14px;
+    text-align: center;
+}
+
+.infoTable {
+    width: 100%;
+}
+
+.infoCellOne {
+    width: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.infoCellTwo {
+    width: 50%;
+    text-align: right;
+}
+
+#footer {
+    text-align: right;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+#loader {
+    display: block;
+    height: 100px;
+     margin-top: 20px;
+}
+
+#spinner {
+    display: block;
+    margin: auto;
+    border: 10px solid #e91c1c;
+    border-radius: 50%;
+    border-top: 10px solid #f6f6f6;
+    width: 50px;
+    height: 50px;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#loading {
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#message {
+    display: none;
+    font-size: 18px;
+    margin: 20px;
+    text-align: center;
+}
+
+#error {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    text-align: center;
+    font-size: 16px;
+    color: red;
+    margin-top: 10px;
+}
+
+.spacer {
+    height: 20px;
+}
