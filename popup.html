@@ -11,13 +11,14 @@
 <body>
     <div id="extension">
         <div id="title"><img src="images/discover_logo.png"><span>Affinity Scorecard</span></div>
+        <div id="header">Powered by Sitecore Discover</div>
         <div id="loader">
             <div id="spinner"></div>
             <div id="loading">Loading user profile...</div>
         </div>
         <div id="error"></div>
         <div id="scorecard">
-            <table width="100%">
+            <table id="basics">
                 <tbody>
                     <tr>
                         <td style="text-align:left">
@@ -29,17 +30,15 @@
                     </tr>
                 </tbody>
             </table>
+            <div id="message"></div>
             <div id="affinities">
-                <div id="message"></div>
                 <!-- AffinityTable inserted here -->
             </div>
+            <div id="keyword"></div>
+            <div id="product"></div>
+            <div id="category"></div>
         </div>
-        <div id="keyword"></div>
-        <div id="product"></div>
-        <div id="category"></div>
-        <div id="footer">Powered by Sitecore Discover</div>
-        <div style="height:10px"></div>
-    </div>
+   </div>
 </body>
 
 </html>

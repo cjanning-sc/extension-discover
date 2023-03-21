@@ -6,10 +6,12 @@ body {
     font-family: Calibri, AvenirNextR, Arial, Sans-Serif;
     font-style: normal;
     color: #212529;
-    width: 350px;
-    height: 125px;
-    padding: 10px;
-    font-size: 16px;
+    width: 375px;
+    height: fit-content;
+    max-height: 600px;
+    padding: 15px;
+    font-size: 14px;
+    overflow: scroll;
 }
 
 #title {
@@ -19,7 +21,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-top: 10px;
-    margin-bottom: 15px;
+    height: 36px;
 }
 
 #title span {
@@ -30,11 +32,25 @@ body {
     width: 40px;
 }
 
-#scorecard {
-    display: none;
-    margin-bottom: 20px;
+#header {
+    text-align: center;
+    color: #05999a;
+    font-size: 12px;
 }
 
+#basics {
+    font-size: 14px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#scorecard {
+    display: none;
+}
+
+#affinities {
+    margin-bottom: 10px;
+}
 
 #affinityTable {
     width: 100%;
@@ -66,7 +82,7 @@ body {
     padding-left: 25px;
     text-align: left;
     border-right: 1px solid darkgray;
-    width: 75%;
+    width: 70%;
 }
 
 .high {
@@ -96,6 +112,7 @@ body {
     width: 50%;
     text-align: right;
     color: -webkit-link;
+    font-size: 15px;
 }
 
 #footer {

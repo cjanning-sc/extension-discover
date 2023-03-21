@@ -23,11 +23,15 @@ function runExtension() {
 
         var supported, hardDomain = false;
         var cookie_domain, cookie_uuid;
-        if (hostname == 'www.reeds.com' || hostname == 'www.biglots.com') {
+        if (hostname == 'www.reeds.com' || hostname == 'www.biglots.com' || hostname == 'www.magidglove.com' || hostname == 'www.bradyid.com' || hostname == 'www.flexshopper.com' || hostname == 'www.electronicexpress.com' || hostname == 'www.electronicexpress.com') {
             cookie_domain = '__rutmb';
             cookie_uuid = '__ruid';
             supported = true;
-        } else if (hostname == 'www.petco.com' || hostname == 'www.dsw.com') {
+        } else if (hostname == 'www.petco.com') {
+            cookie_domain = '__rutma';
+            cookie_uuid = '__ruid';
+            supported = true;
+        } else if (hostname == 'www.dsw.com') {
             cookie_domain = '__rutmb';
             cookie_uuid = '__rutma';
             supported = true;
@@ -47,8 +51,11 @@ function runExtension() {
             if (hardDomain) {
                 getUserProfile(cookie_domain, uuid);
             } else {
-                const domain = await getCookie(tab.url, cookie_domain);
-                await getUserProfile(domain, uuid);
+                var domain = await getCookie(tab.url, cookie_domain);
+                if (domain.length > 9) {
+                    domain = domain.substring(0, 9);
+                }
+                getUserProfile(domain, uuid);
             }
             //localStorage.setItem("extensionLoaded", true);
         }
@@ -70,7 +77,7 @@ function getCookie(tab_url, name) {
 }
 
 async function getUserProfile(domain, uuid) {
-    console.log('Getting user profile for ' + uuid);
+    console.log('Getting user profile for ' + domain + ' - ' + uuid);
     var requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -123,7 +130,7 @@ function buildTable(data) {
         document.getElementById("uuid").innerHTML = data.id;
 
         var affinities = Object.entries(data.affinity);
-        if (affinities.length > 0) {
+        if (affinities.length > 1) {
             const tbl = document.createElement("table");
             tbl.setAttribute("id", "affinityTable");
             const tblBody = document.createElement("tbody");
@@ -189,8 +196,8 @@ function buildTable(data) {
             const divAffinities = document.getElementById("affinities");
             divAffinities.appendChild(tbl);
         } else {
-            // document.getElementById("message").style = "display:block";
-            // document.getElementById("message").innerHTML = "No affinities collected";
+            document.getElementById("message").style = "display:block";
+            document.getElementById("message").innerHTML = "No affinities collected";
         }
 
         if (data.keyword.sp) {
@@ -209,7 +216,7 @@ function buildTable(data) {
                     }
 
                 }
-                console.log(keywordsList);
+
                 const tbl = document.createElement("table");
                 tbl.setAttribute("class", "infoTable");
                 const tblBody = document.createElement("tbody");
@@ -342,6 +349,11 @@ function displayError(errorMessage) {
     document.getElementById("message").style = "display:none";
     document.getElementById("scorecard").style = "display:none";
     document.getElementById("error").style = "display:flex";
+    
+    if (errorMessage == 'Failed to fetch') {
+        errorMessage = 'VPN authentication needed';
+    }
+    
     document.getElementById("error").innerHTML = errorMessage;
     console.log(errorMessage);
 }

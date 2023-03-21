@@ -11,7 +11,11 @@
         "*://www.biglots.com/*",
         "*://www.petco.com/*",
         "*://www.sitecore.com/*",
-        "*://www.dsw.com/*"
+        "*://www.dsw.com/*",
+        "*://www.magidglove.com/*",
+        "*://www.bradyid.com/*",
+        "*://www.flexshopper.com/*",
+        "*://www.electronicexpress.com/*"
     ],
     "icons": {
         "16": "images/discover_logo.png",
